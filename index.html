@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subhash Kapoor · Selected Work</title>
+<meta name="description" content="Selected work by Subhash Kapoor, senior UX and product designer: the Orion design system and eight case studies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:#000;overflow:hidden}
+body{font-family:'Poppins',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+#viewport{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+#stage{position:relative;width:1920px;height:1080px;flex-shrink:0;transform-origin:center center;overflow:hidden;background:#000}
+#stage>section{position:absolute;inset:0;width:1920px;height:1080px;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s}
+#stage>section.on{opacity:1;visibility:visible;transition:opacity .45s ease,visibility 0s}
+#stage>section aside{display:none}
+#bar{position:fixed;left:0;bottom:0;height:3px;background:#D9A06B;transition:width .3s ease;z-index:5}
+#hud{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);display:flex;align-items:center;gap:6px;padding:6px 8px;background:rgba(20,20,24,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#EDEBE6;font-size:14px;z-index:6;transition:opacity .3s ease}
+#hud.hide{opacity:0;pointer-events:none}
+#hud button{all:unset;cursor:pointer;width:36px;height:36px;border-radius:50%;display:grid;place-items:center}
+#hud button:hover,#hud button:focus-visible{background:rgba(255,255,255,.12)}
+#hud button:focus-visible{outline:2px solid #D9A06B}
+#hud svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#count{min-width:64px;text-align:center;font-variant-numeric:tabular-nums}
+#notes{position:fixed;left:50%;bottom:72px;transform:translateX(-50%);width:min(860px,calc(100% - 32px));padding:18px 22px;background:rgba(20,20,24,.92);border:1px solid rgba(255,255,255,.12);border-radius:16px;color:#EDEBE6;font-size:16px;line-height:1.55;z-index:6;display:none}
+#notes.show{display:block}
+#help{position:fixed;top:16px;right:16px;padding:10px 14px;background:rgba(20,20,24,.82);border:1px solid rgba(255,255,255,.12);border-radius:12px;color:#BDBAB3;font-size:13px;line-height:1.6;z-index:6;transition:opacity .4s ease}
+#help.hide{opacity:0;pointer-events:none}
+kbd{font-family:inherit;padding:1px 6px;border:1px solid rgba(255,255,255,.25);border-radius:4px;color:#EDEBE6}
+@media print{html,body{overflow:visible;background:#fff}#viewport{position:static;display:block}#stage{transform:none!important;width:auto;height:auto;overflow:visible}#stage>section{position:relative;opacity:1;visibility:visible;page-break-after:always;break-after:page}#bar,#hud,#notes,#help{display:none}@page{size:1920px 1080px;margin:0}}
+</style>
+</head>
+<body>
+<div id="viewport"><main id="stage" aria-live="polite">
+<section id="cover" data-transition="fade" style="background:radial-gradient(ellipse at 76% 45%, #3A2C22 0%, #221D1D 32%, #16181F 62%);color:#F4EFE6;font-family:'Poppins', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:40px">
+<img src="img/7001fb79fb0d36402b9a4b11dc78ec17.webp" alt="Subhash Kapoor in a cognac blazer" style="position:absolute;right:180px;bottom:24px;width:520px;height:990px;object-fit:contain;object-position:bottom">
+<p style="font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#D9A06B;width:1000px">Selected work · 2019–2025</p>
+<h1 style="font-family:'Poppins', Arial, sans-serif;font-size:120px;font-weight:800;line-height:1.02;letter-spacing:-4px;color:#F4EFE6;width:1060px">Design that moves <span style="color:#D9A06B">the business.</span></h1>
+<p style="font-size:32px;line-height:1.45;color:#C9C2B6;width:960px">Subhash Kapoor, senior UX and product designer. 15+ years designing hands-on across e-commerce, enterprise AI, fintech, insurance, logistics and real estate.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1100px;font-size:24px;color:#9C98A2">subhashkapoor.github.io/Subhash-portfolio</p>
+<aside>Open with the one-line version: a hands-on senior UX designer whose work is measured after launch. Eight case studies follow, each with the problem, the decisions and the result.</aside>
+</section>
+<section id="intro" data-transition="fade" style="background:#F4EFE6;color:#16181F;font-family:'Poppins', Arial, sans-serif;padding:112px 128px;display:flex;flex-direction:column;justify-content:space-between;gap:40px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#8E5A2F">Why hire me</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:72px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#16181F">Senior UX, hands-on <span style="font-family:'Instrument Serif', Georgia, serif;font-style:italic;font-weight:400;color:#8E5A2F">from insight to launch</span></h2>
+</div>
+<div style="display:flex;gap:28px">
+<div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#16181F;padding:40px;border-radius:24px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#D9A06B">Experience</p>
+<p style="font-size:104px;font-weight:800;line-height:1;letter-spacing:-3px;color:#D9A06B">15+ yrs</p>
+<p style="font-size:26px;line-height:1.4;color:#E4DED3">designing products myself: research, flows, UI and prototypes your developers can build from</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#FBF8F2;border:2px solid #E2D9CB;padding:40px;border-radius:24px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#8E5A2F">Domains</p>
+<p style="font-size:104px;font-weight:800;line-height:1;letter-spacing:-3px;color:#8E5A2F">8</p>
+<p style="font-size:26px;line-height:1.4;color:#4E4C57">industries shipped: retail, insurance, real estate, travel, logistics, sports, FMCG, enterprise</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#FBF8F2;border:2px solid #E2D9CB;padding:40px;border-radius:24px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#8E5A2F">Impact</p>
+<p style="font-size:104px;font-weight:800;line-height:1;letter-spacing:-3px;color:#8E5A2F">30%</p>
+<p style="font-size:26px;line-height:1.4;color:#4E4C57">faster decisions on an enterprise AI platform I designed, end to end</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:18px">
+<div style="display:flex;gap:12px;align-items:flex-start">
+<p style="font-size:22px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#16181F;width:170px;flex-shrink:0;padding:8px 0px 0px 0px">Expertise</p>
+<div style="flex:1;display:flex;flex-wrap:wrap;gap:12px">
+<p style="font-size:22px;padding:8px 20px;background:#16181F;border-radius:999px;color:#F4EFE6">UX research</p>
+<p style="font-size:22px;padding:8px 20px;background:#16181F;border-radius:999px;color:#F4EFE6">Information architecture</p>
+<p style="font-size:22px;padding:8px 20px;background:#16181F;border-radius:999px;color:#F4EFE6">Interaction design</p>
+<p style="font-size:22px;padding:8px 20px;background:#16181F;border-radius:999px;color:#F4EFE6">UI &amp; visual design</p>
+<p style="font-size:22px;padding:8px 20px;background:#16181F;border-radius:999px;color:#F4EFE6">Design systems</p>
+<p style="font-size:22px;padding:8px 20px;background:#16181F;border-radius:999px;color:#F4EFE6">Prototyping &amp; testing</p>
+<p style="font-size:22px;padding:8px 20px;background:#16181F;border-radius:999px;color:#F4EFE6">Arabic / RTL</p>
+</div>
+</div>
+<div style="display:flex;gap:12px;align-items:center">
+<p style="font-size:22px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#16181F;width:170px">Clients</p>
+<p style="font-size:24px;color:#4E4C57">Unilever (Knorr) · FedEx · HERE Technologies · AlphaSense · Sukoon · Dar Al Arkan · Camion · Adventure</p>
+</div>
+</div>
+<aside>For a freelance engagement: I am hands-on, not just a manager. I take a product from research to developer-ready UI myself, I have shipped across eight industries on web and mobile, including bilingual Arabic apps, and my work is measured after launch. The eight case studies that follow show this in practice.</aside>
+</section>
+<section id="or1" data-transition="fade" style="background:#000000;color:#F2F2F4;font-family:'Poppins', Arial, sans-serif;padding:48px;display:flex;flex-direction:row;gap:20px">
+<div style="width:560px;display:flex;flex-direction:column;gap:20px"><div style="width:560px;height:300px;flex-shrink:0;background:#111216;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;padding:44px;justify-content:flex-end;gap:14px"><p style="font-size:132px;font-weight:700;line-height:1;letter-spacing:-4px;color:#26BDF3">116</p><p style="font-size:30px;font-weight:500;line-height:1.25;color:#F2F2F4">component sets</p></div><div style="width:560px;height:664px;flex-shrink:0;background:#111216;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;padding:40px;gap:16px"><p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#9A9CA6">Date &amp; time</p><div style="flex:1;display:flex;align-items:center;justify-content:center"><img src="img/d47e154dfb64d291e1720dd25747bb02.webp" alt="Orion date picker, open state" style="width:460px;height:428px;object-fit:contain;object-position:center;border-radius:16px"></div><p style="font-size:30px;font-weight:500;color:#F2F2F4">Every state, every size</p></div></div><div style="width:664px;display:flex;flex-direction:column;gap:20px"><div style="width:664px;height:600px;flex-shrink:0;background:repeating-radial-gradient(circle at 50% 46%, rgba(38,189,243,0) 0px, rgba(38,189,243,0) 46px, rgba(38,189,243,0.22) 47px, rgba(38,189,243,0) 49px), radial-gradient(circle at 50% 46%, #10324A 0%, #0A0D14 55%, #000000 100%);border-radius:28px;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:48px"><p style="font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#26BDF3">Design system</p><h1 style="font-family:'Poppins', Arial, sans-serif;font-size:168px;font-weight:700;line-height:1;letter-spacing:-6px;color:#E6D2AE">Orion</h1><p style="font-size:30px;line-height:1.4;color:#C9CBD3;width:480px;text-align:center">Built end to end: tokens, components and docs for web and mobile.</p></div><div style="display:flex;gap:20px"><div style="width:322px;height:364px;flex-shrink:0;background:#111216;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;padding:40px;justify-content:flex-end;gap:12px"><p style="font-size:84px;font-weight:700;line-height:1;letter-spacing:-4px;color:#E6D2AE">4,587</p><p style="font-size:30px;font-weight:500;line-height:1.25;color:#F2F2F4">icons</p></div><div style="width:322px;height:364px;flex-shrink:0;background:#111216;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;padding:40px;justify-content:flex-end;gap:28px"><div style="display:flex;gap:0px;width:160px;height:160px;border-radius:80px;overflow:hidden;border:2px solid #2A2C34"><div style="flex:1;background:#F8FAFC"></div><div style="flex:1;background:#151A20"></div></div><p style="font-size:30px;font-weight:500;color:#F2F2F4">Light &amp; dark modes</p></div></div></div><div style="width:560px;display:flex;flex-direction:column;gap:20px"><div style="width:560px;height:300px;flex-shrink:0;background:#111216;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;padding:44px;justify-content:flex-end;gap:14px"><p style="font-size:132px;font-weight:700;line-height:1;letter-spacing:-4px;color:#26BDF3">2,045</p><p style="font-size:30px;font-weight:500;line-height:1.25;color:#F2F2F4">variants</p></div><div style="width:560px;height:340px;flex-shrink:0;background:#F5F5F5;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;"><div style="flex:1;display:flex;align-items:center;justify-content:center;background:#F5F5F5"><img src="img/8429cc45d80bb5b125edc681a1f4a19f.webp" alt="Orion success notification" style="width:500px;height:204px;object-fit:contain;object-position:center;"></div><p style="font-size:26px;font-weight:500;color:#1B293D;padding:0px 0px 0px 40px;height:76px;background:#F5F5F5">Notifications &amp; alerts</p></div><div style="width:560px;height:304px;flex-shrink:0;background:#111216;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;padding:44px;justify-content:flex-end;gap:14px"><p style="font-size:120px;font-weight:700;line-height:1;letter-spacing:-4px;color:#E6D2AE">94</p><p style="font-size:30px;font-weight:500;line-height:1.25;color:#F2F2F4">design tokens, as variables</p></div></div>
+<aside>Orion is a design system I built and own end to end. The numbers are counted from the Figma library: 116 component sets with 2,045 variants, 4,587 icons and 94 variables with light and dark modes.</aside>
+</section>
+<section id="or2" data-transition="fade" style="background:#000000;color:#F2F2F4;font-family:'Poppins', Arial, sans-serif;padding:48px;display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;gap:20px"><div style="width:1200px;height:420px;flex-shrink:0;background:#111216;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;padding:44px;gap:20px"><p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#26BDF3">Foundations</p><h2 style="font-family:'Poppins', Arial, sans-serif;font-size:56px;font-weight:700;line-height:1.05;letter-spacing:-2px;color:#E6D2AE">Tokens first. Components second.</h2><div style="display:flex;gap:16px"><div style="flex:1;display:flex;flex-direction:column;gap:10px;border:2px solid #2A2C34;border-radius:20px;padding:24px"><p style="font-size:64px;font-weight:700;line-height:1;letter-spacing:-2px;color:#26BDF3">46</p><p style="font-size:26px;font-weight:600;color:#F2F2F4">Primitives</p><p style="font-size:20px;line-height:1.4;color:#9A9CA6;font-family:'Courier New', monospace">Blue/600 #0065FF</p></div><p style="font-size:40px;color:#9A9CA6;align-self:center">→</p><div style="flex:1;display:flex;flex-direction:column;gap:10px;border:2px solid #2A2C34;border-radius:20px;padding:24px"><p style="font-size:64px;font-weight:700;line-height:1;letter-spacing:-2px;color:#F2F2F4">33</p><p style="font-size:26px;font-weight:600;color:#F2F2F4">Semantic tokens</p><p style="font-size:20px;line-height:1.4;color:#9A9CA6;font-family:'Courier New', monospace">Text/Link · Light &amp; dark</p></div><p style="font-size:40px;color:#9A9CA6;align-self:center">→</p><div style="flex:1;display:flex;flex-direction:column;gap:10px;border:2px solid #2A2C34;border-radius:20px;padding:24px"><p style="font-size:64px;font-weight:700;line-height:1;letter-spacing:-2px;color:#E6D2AE">116</p><p style="font-size:26px;font-weight:600;color:#F2F2F4">Components</p><p style="font-size:20px;line-height:1.4;color:#9A9CA6;font-family:'Courier New', monospace">Button, Table, Steps…</p></div></div></div><div style="width:604px;height:420px;flex-shrink:0;background:#111216;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;padding:40px;gap:24px"><p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#9A9CA6">Colour</p><div style="display:flex;gap:12px"><div style="flex:1;display:flex;flex-direction:column;gap:10px"><div style="height:120px;border-radius:16px;background:#2C3973"></div><p style="font-size:20px;font-weight:600;color:#F2F2F4">Primary</p><p style="font-size:18px;color:#9A9CA6">#2C3973</p></div><div style="flex:1;display:flex;flex-direction:column;gap:10px"><div style="height:120px;border-radius:16px;background:#26BDF3"></div><p style="font-size:20px;font-weight:600;color:#F2F2F4">Secondary</p><p style="font-size:18px;color:#9A9CA6">#26BDF3</p></div><div style="flex:1;display:flex;flex-direction:column;gap:10px"><div style="height:120px;border-radius:16px;background:#4CA82C"></div><p style="font-size:20px;font-weight:600;color:#F2F2F4">Success</p><p style="font-size:18px;color:#9A9CA6">#4CA82C</p></div><div style="flex:1;display:flex;flex-direction:column;gap:10px"><div style="height:120px;border-radius:16px;background:#FDD70E"></div><p style="font-size:20px;font-weight:600;color:#F2F2F4">Warning</p><p style="font-size:18px;color:#9A9CA6">#FDD70E</p></div><div style="flex:1;display:flex;flex-direction:column;gap:10px"><div style="height:120px;border-radius:16px;background:#DE350B"></div><p style="font-size:20px;font-weight:600;color:#F2F2F4">Danger</p><p style="font-size:18px;color:#9A9CA6">#DE350B</p></div></div><div style="display:flex;height:40px;border-radius:12px;overflow:hidden"><div style="flex:1;background:#FFFFFF"></div><div style="flex:1;background:#E7EBF0"></div><div style="flex:1;background:#C5CCD4"></div><div style="flex:1;background:#949EA9"></div><div style="flex:1;background:#707275"></div><div style="flex:1;background:#474F5A"></div><div style="flex:1;background:#171C23"></div></div></div></div><div style="display:flex;gap:20px"><div style="width:600px;height:544px;flex-shrink:0;background:#111216;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;padding:40px;gap:20px;justify-content:space-between"><div style="display:flex;justify-content:space-between;align-items:flex-end"><p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#9A9CA6">Type</p><p style="font-size:22px;color:#9A9CA6">Noto Sans · 27 styles</p></div><div style="display:flex;gap:32px;align-items:center"><p style="font-size:150px;font-weight:600;line-height:1;color:#E6D2AE">Aa</p><div style="flex:1;display:flex;flex-direction:column;gap:2px"><div style="display:flex;justify-content:space-between;border-bottom:1px solid #24262E;padding:4px 0px"><p style="font-size:32px;color:#F2F2F4">H1</p><p style="font-size:18px;color:#9A9CA6">26px</p></div><div style="display:flex;justify-content:space-between;border-bottom:1px solid #24262E;padding:4px 0px"><p style="font-size:30px;color:#F2F2F4">H2</p><p style="font-size:18px;color:#9A9CA6">24px</p></div><div style="display:flex;justify-content:space-between;border-bottom:1px solid #24262E;padding:4px 0px"><p style="font-size:28px;color:#F2F2F4">H3</p><p style="font-size:18px;color:#9A9CA6">22px</p></div><div style="display:flex;justify-content:space-between;border-bottom:1px solid #24262E;padding:4px 0px"><p style="font-size:25px;color:#F2F2F4">H4</p><p style="font-size:18px;color:#9A9CA6">20px</p></div><div style="display:flex;justify-content:space-between;border-bottom:1px solid #24262E;padding:4px 0px"><p style="font-size:22px;color:#F2F2F4">H5</p><p style="font-size:18px;color:#9A9CA6">18px</p></div><div style="display:flex;justify-content:space-between;border-bottom:1px solid #24262E;padding:4px 0px"><p style="font-size:20px;color:#F2F2F4">Large</p><p style="font-size:18px;color:#9A9CA6">16px</p></div><div style="display:flex;justify-content:space-between;border-bottom:1px solid #24262E;padding:4px 0px"><p style="font-size:18px;color:#F2F2F4">Default</p><p style="font-size:18px;color:#9A9CA6">14px</p></div><div style="display:flex;justify-content:space-between;border-bottom:1px solid #24262E;padding:4px 0px"><p style="font-size:15px;color:#F2F2F4">Small</p><p style="font-size:18px;color:#9A9CA6">12px</p></div><div style="display:flex;justify-content:space-between;border-bottom:1px solid #24262E;padding:4px 0px"><p style="font-size:12px;color:#F2F2F4">XSmall</p><p style="font-size:18px;color:#9A9CA6">10px</p></div></div></div></div><div style="width:600px;height:544px;flex-shrink:0;background:#111216;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;padding:40px;gap:28px"><p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#9A9CA6">Spacing &amp; radius</p><div style="display:flex;flex-direction:column;gap:12px"><div style="display:flex;align-items:center;gap:16px"><p style="width:44px;font-size:20px;color:#9A9CA6">4</p><div style="height:22px;width:24px;border-radius:6px;background:#26BDF3"></div></div><div style="display:flex;align-items:center;gap:16px"><p style="width:44px;font-size:20px;color:#9A9CA6">8</p><div style="height:22px;width:48px;border-radius:6px;background:#26BDF3"></div></div><div style="display:flex;align-items:center;gap:16px"><p style="width:44px;font-size:20px;color:#9A9CA6">16</p><div style="height:22px;width:96px;border-radius:6px;background:#26BDF3"></div></div><div style="display:flex;align-items:center;gap:16px"><p style="width:44px;font-size:20px;color:#9A9CA6">24</p><div style="height:22px;width:144px;border-radius:6px;background:#26BDF3"></div></div><div style="display:flex;align-items:center;gap:16px"><p style="width:44px;font-size:20px;color:#9A9CA6">32</p><div style="height:22px;width:192px;border-radius:6px;background:#26BDF3"></div></div><div style="display:flex;align-items:center;gap:16px"><p style="width:44px;font-size:20px;color:#9A9CA6">64</p><div style="height:22px;width:384px;border-radius:6px;background:#26BDF3"></div></div></div><div style="display:flex;gap:28px"><div style="display:flex;flex-direction:column;gap:8px;align-items:center"><div style="width:72px;height:72px;border:3px solid #E6D2AE;border-radius:6.0px"></div><p style="font-size:18px;color:#9A9CA6">4px</p></div><div style="display:flex;flex-direction:column;gap:8px;align-items:center"><div style="width:72px;height:72px;border:3px solid #E6D2AE;border-radius:12.0px"></div><p style="font-size:18px;color:#9A9CA6">8px</p></div><div style="display:flex;flex-direction:column;gap:8px;align-items:center"><div style="width:72px;height:72px;border:3px solid #E6D2AE;border-radius:24.0px"></div><p style="font-size:18px;color:#9A9CA6">16px</p></div></div></div><div style="width:584px;height:544px;flex-shrink:0;background:#111216;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;padding:40px;justify-content:space-between"><p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#9A9CA6">Breakpoints</p><div style="display:flex;gap:28px;align-items:flex-end;justify-content:center"><div style="display:flex;flex-direction:column;gap:12px;align-items:center"><div style="width:66px;height:140px;border:3px solid #F2F2F4;border-radius:14px"></div><p style="font-size:22px;font-weight:600;color:#F2F2F4">393</p><p style="font-size:18px;color:#9A9CA6">Mobile</p></div><div style="display:flex;flex-direction:column;gap:12px;align-items:center"><div style="width:120px;height:166px;border:3px solid #F2F2F4;border-radius:14px"></div><p style="font-size:22px;font-weight:600;color:#F2F2F4">834</p><p style="font-size:18px;color:#9A9CA6">Tablet</p></div><div style="display:flex;flex-direction:column;gap:12px;align-items:center"><div style="width:220px;height:150px;border:3px solid #F2F2F4;border-radius:14px"></div><p style="font-size:22px;font-weight:600;color:#F2F2F4">1280</p><p style="font-size:18px;color:#9A9CA6">Desktop</p></div></div><p style="font-size:30px;font-weight:500;line-height:1.3;color:#F2F2F4">One library, three layouts, tokens for column widths built in.</p></div></div>
+<aside>Primitives hold raw values, semantic tokens give them meaning (Text/Link, Surface/CardsStrong) and switch between light and dark, and components only ever use semantic tokens. That is why a theme change or rebrand is a token edit, not a redesign.</aside>
+</section>
+<section id="or3" data-transition="fade" style="background:#F4EFE6;color:#16181F;font-family:'Poppins', Arial, sans-serif;padding:96px 112px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#8E5A2F">Orion · What it changed</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:68px;font-weight:700;line-height:1.08;letter-spacing:-2px;color:#16181F">One system, every surface. <span style="font-family:'Instrument Serif', Georgia, serif;font-style:italic;font-weight:400;color:#8E5A2F">A faster team.</span></h2>
+</div>
+<div style="display:flex;gap:64px;flex:1">
+<div style="width:820px;display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;align-items:center;gap:16px"><p style="font-size:22px;font-weight:600;padding:10px 22px;background:#16181F;color:#F4EFE6;border-radius:999px">Orion library</p><div style="flex:1;height:2px;background:#E2D9CB"></div><p style="font-size:22px;color:#4E4C57">feeds three products</p></div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;gap:28px;align-items:center;background:#FBF8F2;border:2px solid #E2D9CB;border-radius:20px;padding:20px">
+<div style="width:340px;height:170px;flex-shrink:0;background:#FFFFFF;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center"><img src="img/ca70d2b7026b3f14f8b29b8f61918d9d.webp" alt="Orion table component" style="width:340px;height:170px;object-fit:cover;object-position:left top"></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px"><p style="font-size:30px;font-weight:700;color:#16181F">Admin panel</p><p style="font-size:22px;line-height:1.4;color:#4E4C57">Tables, filters and bulk actions for operations teams.</p></div>
+</div>
+<div style="display:flex;gap:28px;align-items:center;background:#FBF8F2;border:2px solid #E2D9CB;border-radius:20px;padding:20px">
+<div style="width:340px;height:170px;flex-shrink:0;background:#FFFFFF;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center"><img src="img/8429cc45d80bb5b125edc681a1f4a19f.webp" alt="Orion notification component" style="width:340px;height:170px;object-fit:contain;object-position:center"></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px"><p style="font-size:30px;font-weight:700;color:#16181F">Website</p><p style="font-size:22px;line-height:1.4;color:#4E4C57">Notifications, tabs and steps for customer journeys.</p></div>
+</div>
+<div style="display:flex;gap:28px;align-items:center;background:#FBF8F2;border:2px solid #E2D9CB;border-radius:20px;padding:20px">
+<div style="width:340px;height:170px;flex-shrink:0;background:#FFFFFF;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center"><img src="img/d47e154dfb64d291e1720dd25747bb02.webp" alt="Orion date picker component" style="width:340px;height:170px;object-fit:contain;object-position:center"></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px"><p style="font-size:30px;font-weight:700;color:#16181F">Mobile app</p><p style="font-size:22px;line-height:1.4;color:#4E4C57">The same tokens at 393px, in light and dark.</p></div>
+</div>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:22px;justify-content:center">
+<div style="display:flex;gap:24px;border-top:2px solid #E2D9CB;padding:22px 0px 0px 0px">
+<p style="width:150px;flex-shrink:0;font-size:52px;font-weight:800;line-height:1;letter-spacing:-2px;color:#8E5A2F">40%</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px"><p style="font-size:28px;font-weight:700;color:#16181F">Fewer design–dev iterations</p><p style="font-size:22px;line-height:1.4;color:#4E4C57">Every state is designed up front, so reviews stop bouncing back and forth.</p></div>
+</div>
+<div style="display:flex;gap:24px;border-top:2px solid #E2D9CB;padding:22px 0px 0px 0px">
+<p style="width:150px;flex-shrink:0;font-size:52px;font-weight:800;line-height:1;letter-spacing:-2px;color:#8E5A2F">1:1</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px"><p style="font-size:28px;font-weight:700;color:#16181F">Handoff in tokens, not redlines</p><p style="font-size:22px;line-height:1.4;color:#4E4C57">Figma variables carry the same names as code, so engineers inspect tokens instead of measuring pixels.</p></div>
+</div>
+<div style="display:flex;gap:24px;border-top:2px solid #E2D9CB;padding:22px 0px 0px 0px">
+<p style="width:150px;flex-shrink:0;font-size:52px;font-weight:800;line-height:1;letter-spacing:-2px;color:#8E5A2F">All</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px"><p style="font-size:28px;font-weight:700;color:#16181F">Trained the entire dev team</p><p style="font-size:22px;line-height:1.4;color:#4E4C57">Hands-on sessions so every engineer could find, use and extend components on their own.</p></div>
+</div>
+<div style="display:flex;gap:24px;border-top:2px solid #E2D9CB;padding:22px 0px 0px 0px">
+<p style="width:150px;flex-shrink:0;font-size:52px;font-weight:800;line-height:1;letter-spacing:-2px;color:#8E5A2F">3</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px"><p style="font-size:28px;font-weight:700;color:#16181F">Products, one look and feel</p><p style="font-size:22px;line-height:1.4;color:#4E4C57">Admin panel, website and mobile app ship new features that already match.</p></div>
+</div>
+</div>
+</div>
+<aside>The real value of Orion was speed and consistency. Design and code share one vocabulary of tokens and components, I trained the whole engineering team to use it, and the admin panel, website and mobile app now look and behave the same. That is what cut design–dev iterations by 40%.</aside>
+</section>
+<section id="div1" data-transition="push" style="background:linear-gradient(135deg, #3A2C1E 0%, #2A2118 60%, #1C160F 100%);color:#FBF5EC;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<p style="font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#D9BE95">Case study 01 of 08</p>
+<div style="display:flex;flex-direction:column;gap:28px">
+<h1 style="font-family:'Poppins', Arial, sans-serif;font-size:120px;font-weight:800;line-height:1.05;letter-spacing:-4px;color:#FBF5EC">Luxury e-commerce, ANZ</h1>
+<p style="font-size:36px;line-height:1.4;color:#D9C9B0;width:1300px">Modernising a heritage department store's website and app, from audit to design system.</p>
+<div style="display:flex;gap:12px">
+<p style="font-size:24px;padding:10px 22px;border:2px solid #6B5A44;border-radius:999px;color:#E8DCC9">Retail</p>
+<p style="font-size:24px;padding:10px 22px;border:2px solid #6B5A44;border-radius:999px;color:#E8DCC9">Web + app</p>
+<p style="font-size:24px;padding:10px 22px;border:2px solid #6B5A44;border-radius:999px;color:#E8DCC9">UX lead</p>
+</div>
+</div>
+<div style="display:flex;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#D9BE95"></div><p style="font-size:20px;color:#FBF5EC">Luxury e-commerce</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#4A3C2C"></div><p style="font-size:20px;color:#9C8D78">Sukoon</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#4A3C2C"></div><p style="font-size:20px;color:#9C8D78">Dar Al Arkan</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#4A3C2C"></div><p style="font-size:20px;color:#9C8D78">Knorr US</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#4A3C2C"></div><p style="font-size:20px;color:#9C8D78">Pickleball</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#4A3C2C"></div><p style="font-size:20px;color:#9C8D78">Adventure</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#4A3C2C"></div><p style="font-size:20px;color:#9C8D78">Camion</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#4A3C2C"></div><p style="font-size:20px;color:#9C8D78">Empower</p></div>
+</div>
+<aside>First case study: a luxury department store in Australia, client name withheld.</aside>
+</section>
+<section id="lux1" data-transition="fade" style="background:linear-gradient(135deg, #FBF5EC 0%, #EEDFC6 55%, #D9BE95 100%);color:#2A2118;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:72px">
+<div style="width:760px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#6E4F27">Case study 01 · Luxury retail · Australia</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#2A2118">Luxury e-commerce, minus the friction</h2>
+<p style="font-size:30px;line-height:1.45;color:#4A3B2A">A heritage department store's website and app had grown piece by piece: dense menus, inconsistent components and a legacy design system slowing every release.</p>
+<div style="display:flex;gap:20px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#FBF5EC;padding:28px;border-radius:16px">
+<p style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-2px;color:#6E4F27">+4%</p>
+<p style="font-size:24px;line-height:1.3;color:#4A3B2A">client sales, every year</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#FBF5EC;padding:28px;border-radius:16px">
+<p style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-2px;color:#6E4F27">4</p>
+<p style="font-size:24px;line-height:1.3;color:#4A3B2A">breakpoints, every screen</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#FBF5EC;padding:28px;border-radius:16px">
+<p style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-2px;color:#6E4F27">6</p>
+<p style="font-size:24px;line-height:1.3;color:#4A3B2A">sign-in flows, web and app</p>
+</div>
+</div>
+<p style="font-size:24px;color:#4A3B2A"><b style="color:#2A2118">My role:</b> UX lead and hands-on designer</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:24px">
+<div style="width:260px;height:560px;border:10px solid #16181F;border-radius:44px;overflow:hidden;background:#16181F;transform:translateY(40px);box-shadow:0px 40px 60px -30px rgba(42,33,24,0.55)"><img src="img/3585809522ec03f17d1bf2f0a4e4a619.webp" alt="Wishlist empty state on mobile web" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+<div style="width:260px;height:560px;border:10px solid #16181F;border-radius:44px;overflow:hidden;background:#16181F;transform:translateY(-40px);box-shadow:0px 40px 60px -30px rgba(42,33,24,0.55)"><img src="img/12f1400746827c9d4dcc818b906aa91c.webp" alt="App sign-in screen" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+<div style="width:260px;height:560px;border:10px solid #16181F;border-radius:44px;overflow:hidden;background:#16181F;transform:translateY(60px);box-shadow:0px 40px 60px -30px rgba(42,33,24,0.55)"><img src="img/6f0b9f7ac03ed624e17e572c0df07446.webp" alt="App sign-in with an error message" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+</div>
+<aside>Client name withheld. I ran fortnightly sprints with the client's product, engineering and content teams: audit first, then the header, wishlist and sign-in, while upgrading the design system underneath. UX optimisation across the portfolio lifted client sales 4% a year.</aside>
+</section>
+<section id="lux2" data-transition="fade" style="background:#16181F;color:#F4EFE6;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:72px">
+<div style="width:640px;display:flex;flex-direction:column;gap:36px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#D9A06B">Luxury e-commerce · Decisions</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#F4EFE6">Audit first, then fix the busiest screens</h2>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #3A3D48;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#D9A06B">Evidence before opinions</h3>
+<p style="font-size:24px;line-height:1.45;color:#C9C2B6">A heuristic audit and live-site testing turned debates into a prioritised backlog.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #3A3D48;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#D9A06B">A menu that doesn't overwhelm</h3>
+<p style="font-size:24px;line-height:1.45;color:#C9C2B6">Department, then sub-category, then the full menu, tested with customers before sign-off.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #3A3D48;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#D9A06B">Search where people look</h3>
+<p style="font-size:24px;line-height:1.45;color:#C9C2B6">A wider, centred search and a header that stays pinned while shopping.</p>
+</div>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<img src="img/d23d86b07af4ba3b6f07b2c58c59d192.webp" alt="Redesigned header with an open clothing mega menu" style="width:952px;height:529px;object-fit:cover;border-radius:16px;border:2px solid #3A3D48">
+<p style="font-size:24px;color:#9C98A2">The new header: pick a department, then open only the menu you need. Brand marks removed.</p>
+</div>
+<aside>The header is on every page, so it is the highest-traffic component. I reviewed twelve retail and travel sites, explored a progressive-disclosure header and tested the concepts with customers in a live-content environment.</aside>
+</section>
+<section id="lux3" data-transition="fade" style="background:#F4EFE6;color:#16181F;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:72px">
+<div style="width:640px;display:flex;flex-direction:column;gap:36px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#8E5A2F">Luxury e-commerce · Outcome</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#16181F">A wishlist built for gifting, on a system built to scale</h2>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #DCD2C2;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#8E5A2F">From saving to sharing</h3>
+<p style="font-size:24px;line-height:1.45;color:#4E4C57">Occasion, description and a public link turn a wishlist into a gift list.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #DCD2C2;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#8E5A2F">Unhappy paths, designed</h3>
+<p style="font-size:24px;line-height:1.45;color:#4E4C57">Load, share and remove errors drawn at every breakpoint before build.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #DCD2C2;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#8E5A2F">Legacy system, upgraded</h3>
+<p style="font-size:24px;line-height:1.45;color:#4E4C57">Foundations first, anatomy documented, so developers stopped guessing.</p>
+</div>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<img src="img/499c4c9966483ae6f27f4dc0b19e0929.webp" alt="Wishlist with a side panel for occasion, description and a public share link" style="width:952px;height:661px;object-fit:cover;border-radius:16px;border:2px solid #DCD2C2">
+<p style="font-size:24px;color:#6A6774">Manage and share from a side panel, with the list still visible behind it.</p>
+</div>
+<aside>Beyond the wishlist, I designed six authentication flows on web and app and upgraded the legacy design system: an audit across platforms, foundational components first, then integrated ones, with anatomy documentation and handover checklists.</aside>
+</section>
+<section id="div2" data-transition="push" style="background:linear-gradient(135deg, #5A1A68 0%, #3E1149 60%, #2A0B32 100%);color:#FFF4FA;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<p style="font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#FF9B57">Case study 02 of 08</p>
+<div style="display:flex;flex-direction:column;gap:28px">
+<h1 style="font-family:'Poppins', Arial, sans-serif;font-size:120px;font-weight:800;line-height:1.05;letter-spacing:-4px;color:#FFF4FA">Sukoon insurance app</h1>
+<p style="font-size:36px;line-height:1.4;color:#E2CFE6;width:1300px">A first mobile app for UAE customers, built around the moment that matters most: the roadside claim.</p>
+<div style="display:flex;gap:12px">
+<p style="font-size:24px;padding:10px 22px;border:2px solid #7A4686;border-radius:999px;color:#F2E4F5">Insurance</p>
+<p style="font-size:24px;padding:10px 22px;border:2px solid #7A4686;border-radius:999px;color:#F2E4F5">iOS + Android</p>
+<p style="font-size:24px;padding:10px 22px;border:2px solid #7A4686;border-radius:999px;color:#F2E4F5">UX + UI design</p>
+</div>
+</div>
+<div style="display:flex;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#B9849F"></div><p style="font-size:20px;color:#C9A9CF">Luxury e-commerce</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#FF9B57"></div><p style="font-size:20px;color:#FFF4FA">Sukoon</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#5E2C69"></div><p style="font-size:20px;color:#C9A9CF">Dar Al Arkan</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#5E2C69"></div><p style="font-size:20px;color:#C9A9CF">Knorr US</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#5E2C69"></div><p style="font-size:20px;color:#C9A9CF">Pickleball</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#5E2C69"></div><p style="font-size:20px;color:#C9A9CF">Adventure</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#5E2C69"></div><p style="font-size:20px;color:#C9A9CF">Camion</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#5E2C69"></div><p style="font-size:20px;color:#C9A9CF">Empower</p></div>
+</div>
+<aside>Second case study: Sukoon Insurance, UAE.</aside>
+</section>
+<section id="suk1" data-transition="fade" style="background:linear-gradient(135deg, #FAF6FB 0%, #EBDDEF 60%, #D9C2E0 100%);color:#1C171C;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:72px">
+<div style="width:760px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#671E75">Case study 02 · Sukoon Insurance · UAE</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#1C171C">Insurance that fits in one hand</h2>
+<p style="font-size:30px;line-height:1.45;color:#4A3E4D">Policies, claims and help were spread across phone lines, branches and email. Sukoon needed its first app, for people who are stressed and on one bar of signal.</p>
+<div style="display:flex;gap:20px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#FAF6FB;padding:28px;border-radius:16px">
+<p style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-2px;color:#671E75">20+</p>
+<p style="font-size:24px;line-height:1.3;color:#4A3E4D">flows, motor, health and servicing</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#FAF6FB;padding:28px;border-radius:16px">
+<p style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-2px;color:#671E75">6</p>
+<p style="font-size:24px;line-height:1.3;color:#4A3E4D">sprints, each ending in a prototype</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#FAF6FB;padding:28px;border-radius:16px">
+<p style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-2px;color:#671E75">0→1</p>
+<p style="font-size:24px;line-height:1.3;color:#4A3E4D">shipped to App Store and Play</p>
+</div>
+</div>
+<p style="font-size:24px;color:#4A3E4D"><b style="color:#1C171C">My role:</b> UX and UI design, discovery to hypercare</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:24px">
+<div style="width:260px;height:560px;border:10px solid #1C171C;border-radius:44px;overflow:hidden;background:#1C171C;transform:translateY(40px);box-shadow:0px 40px 60px -30px rgba(60,20,70,0.5)"><img src="img/7261e779aa9211e28eafa977c4d8aa08.webp" alt="Onboarding: manage your policies" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+<div style="width:260px;height:560px;border:10px solid #1C171C;border-radius:44px;overflow:hidden;background:#1C171C;transform:translateY(-40px);box-shadow:0px 40px 60px -30px rgba(60,20,70,0.5)"><img src="img/a041866db80cce97ad5d8d0d533defed.webp" alt="Health policy home with digital card and claims" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+<div style="width:260px;height:560px;border:10px solid #1C171C;border-radius:44px;overflow:hidden;background:#1C171C;transform:translateY(60px);box-shadow:0px 40px 60px -30px rgba(60,20,70,0.5)"><img src="img/dbf4cd68ebdef225d10538ea805d8440.webp" alt="Motor claim, step one" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+</div>
+<aside>The app had to serve existing customers and people only shopping for cover, and it treats the moments that matter most, an accident or a hospital visit, as the primary use cases rather than edge cases.</aside>
+</section>
+<section id="suk2" data-transition="fade" style="background:#2E1035;color:#FFF4FA;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:72px">
+<div style="width:640px;display:flex;flex-direction:column;gap:36px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#FF9B57">Sukoon · Hero flow</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#FFF4FA">Roadside to submitted, without typing a report</h2>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #54305C;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#FF9B57">Scan, don't type</h3>
+<p style="font-size:24px;line-height:1.45;color:#E2CFE6">The camera reads the police report, Mulkiya and licence; the customer confirms.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #54305C;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#FF9B57">Always show where I am</h3>
+<p style="font-size:24px;line-height:1.45;color:#E2CFE6">Six visible steps and a review screen replace silence after "Submit".</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #54305C;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#FF9B57">Help one tap away</h3>
+<p style="font-size:24px;line-height:1.45;color:#E2CFE6">Roadside and medical help work even before sign-in.</p>
+</div>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:24px">
+<div style="width:260px;height:560px;border:10px solid #120614;border-radius:44px;overflow:hidden;background:#120614;transform:translateY(40px)"><img src="img/c02d9d490801a5631c8c0850d6f037e4.webp" alt="Scan the police report" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+<div style="width:260px;height:560px;border:10px solid #120614;border-radius:44px;overflow:hidden;background:#120614;transform:translateY(-40px)"><img src="img/8c008b7a6d3091dbfc86734f135743e4.webp" alt="Confirm what the scan read" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+<div style="width:260px;height:560px;border:10px solid #120614;border-radius:44px;overflow:hidden;background:#120614;transform:translateY(60px)"><img src="img/7830df36ec5961d346b8a708660eec7b.webp" alt="Review the claim before submitting" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+</div>
+<aside>The motor claim is the flow that justifies the app. OCR fills the fields, but the customer always confirms, and a No leads to edit, never a dead end. I also designed the error scenarios before the happy path and reviewed them every sprint.</aside>
+</section>
+<section id="div3" data-transition="push" style="background:linear-gradient(135deg, #4B1E6E 0%, #33144D 60%, #22102F 100%);color:#F7F2FA;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<p style="font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#E9B949">Case study 03 of 08</p>
+<div style="display:flex;flex-direction:column;gap:28px">
+<h1 style="font-family:'Poppins', Arial, sans-serif;font-size:120px;font-weight:800;line-height:1.05;letter-spacing:-4px;color:#F7F2FA">Dar Al Arkan property app</h1>
+<p style="font-size:36px;line-height:1.4;color:#D9CCE4;width:1300px">One bilingual app for Saudi Arabia's property market: buyers and renters on one side, brokers and owners on the other.</p>
+<div style="display:flex;gap:12px">
+<p style="font-size:24px;padding:10px 22px;border:2px solid #6A4A86;border-radius:999px;color:#EDE4F4">Real estate</p>
+<p style="font-size:24px;padding:10px 22px;border:2px solid #6A4A86;border-radius:999px;color:#EDE4F4">English + Arabic</p>
+<p style="font-size:24px;padding:10px 22px;border:2px solid #6A4A86;border-radius:999px;color:#EDE4F4">UX + UI design</p>
+</div>
+</div>
+<div style="display:flex;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#9E86B4"></div><p style="font-size:20px;color:#BBA8CC">Luxury e-commerce</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#9E86B4"></div><p style="font-size:20px;color:#BBA8CC">Sukoon</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#E9B949"></div><p style="font-size:20px;color:#F7F2FA">Dar Al Arkan</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#4E3268"></div><p style="font-size:20px;color:#BBA8CC">Knorr US</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#4E3268"></div><p style="font-size:20px;color:#BBA8CC">Pickleball</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#4E3268"></div><p style="font-size:20px;color:#BBA8CC">Adventure</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#4E3268"></div><p style="font-size:20px;color:#BBA8CC">Camion</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#4E3268"></div><p style="font-size:20px;color:#BBA8CC">Empower</p></div>
+</div>
+<aside>Third case study: Dar Al Arkan Online, Saudi Arabia.</aside>
+</section>
+<section id="daa1" data-transition="fade" style="background:linear-gradient(135deg, #FAF9F6 0%, #F1EDE6 60%, #E4DCEB 100%);color:#1A1F31;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:72px">
+<div style="width:760px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#521C78">Case study 03 · Dar Al Arkan · Saudi Arabia</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#1A1F31">One property app for the whole market</h2>
+<p style="font-size:30px;line-height:1.45;color:#4A4A55">Buyers and renters need to trust what they see; owners, brokers, developers and agents need every lead in one place. In English and Arabic.</p>
+<div style="display:flex;gap:20px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#FAF9F6;padding:28px;border-radius:16px">
+<p style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-2px;color:#521C78">136</p>
+<p style="font-size:24px;line-height:1.3;color:#4A4A55">screens designed end to end</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#FAF9F6;padding:28px;border-radius:16px">
+<p style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-2px;color:#521C78">5</p>
+<p style="font-size:24px;line-height:1.3;color:#4A4A55">user roles in one app</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#FAF9F6;padding:28px;border-radius:16px">
+<p style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-2px;color:#521C78">2</p>
+<p style="font-size:24px;line-height:1.3;color:#4A4A55">languages, full right-to-left</p>
+</div>
+</div>
+<p style="font-size:24px;color:#4A4A55"><b style="color:#1A1F31">My role:</b> UX and UI design, research to handoff</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:24px">
+<div style="width:260px;height:560px;border:10px solid #16181F;border-radius:44px;overflow:hidden;background:#16181F;transform:translateY(40px);box-shadow:0px 40px 60px -30px rgba(40,20,60,0.5)"><img src="img/ec33d027a4de79ff74d501ec97f8a3b5.webp" alt="Home with search, tabs and property cards" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+<div style="width:260px;height:560px;border:10px solid #16181F;border-radius:44px;overflow:hidden;background:#16181F;transform:translateY(-40px);box-shadow:0px 40px 60px -30px rgba(40,20,60,0.5)"><img src="img/ccb4078854efe9037a315bad1a43b23c.webp" alt="Map with price pins" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+<div style="width:260px;height:560px;border:10px solid #16181F;border-radius:44px;overflow:hidden;background:#16181F;transform:translateY(60px);box-shadow:0px 40px 60px -30px rgba(40,20,60,0.5)"><img src="img/d91989d3228732a1e1732918709c6cfa.webp" alt="Owner dashboard with reports" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+</div>
+<aside>Research came first: stakeholder questions, five personas (buyer, renter, owner, seller, broker) and a review of seven regional property portals. The end-user app and the professional workspace were designed side by side so they share one system.</aside>
+</section>
+<section id="daa2" data-transition="fade" style="background:#22102F;color:#F7F2FA;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:72px">
+<div style="width:640px;display:flex;flex-direction:column;gap:36px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#E9B949">Dar Al Arkan · Decisions</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#F7F2FA">Designed for both sides of the deal</h2>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #45305A;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#E9B949">Simple search first</h3>
+<p style="font-size:24px;line-height:1.45;color:#D9CCE4">One bar and three tabs; filters only when needed, from a seven-portal review.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #45305A;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#E9B949">Trust before the visit</h3>
+<p style="font-size:24px;line-height:1.45;color:#D9CCE4">Photos, video and a 360 view lead every listing; enquiries land as leads.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #45305A;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#E9B949">Mirrored, not translated</h3>
+<p style="font-size:24px;line-height:1.45;color:#D9CCE4">Layouts built to flip to Arabic right-to-left from the first wireframe.</p>
+</div>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:24px">
+<div style="width:260px;height:560px;border:10px solid #0E0616;border-radius:44px;overflow:hidden;background:#0E0616;transform:translateY(40px)"><img src="img/a7b829b54573d0d136c5857cef0ca42a.webp" alt="Property detail with images, video and 360 view" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+<div style="width:260px;height:560px;border:10px solid #0E0616;border-radius:44px;overflow:hidden;background:#0E0616;transform:translateY(-40px)"><img src="img/ef6e2f25e6c3367744e2eb70779ddd15.webp" alt="Lead notifications for brokers" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+<div style="width:260px;height:560px;border:10px solid #0E0616;border-radius:44px;overflow:hidden;background:#0E0616;transform:translateY(60px)"><img src="img/4de30322a03a7d3f124d097c7114706b.webp" alt="Arabic home screen, right to left" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+</div>
+<aside>Left to right: the buyer's property detail, the broker's lead notifications, and the Arabic home screen. Designing both ends together meant a buyer's "register interest" always arrives as a clear lead with its source.</aside>
+</section>
+<section id="div4" data-transition="push" style="background:linear-gradient(135deg, #0B5A2C 0%, #024022 60%, #01331A 100%);color:#FFFFF7;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<p style="font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#FFB200">Case study 04 of 08</p>
+<div style="display:flex;flex-direction:column;gap:28px">
+<h1 style="font-family:'Poppins', Arial, sans-serif;font-size:120px;font-weight:800;line-height:1.05;letter-spacing:-4px;color:#FFFFF7">Knorr US website</h1>
+<p style="font-size:36px;line-height:1.4;color:#CFE3D4;width:1300px">Redesigning knorr.com/us for Unilever's younger, bolder brand, social-first and mobile-first.</p>
+<div style="display:flex;gap:12px">
+<p style="font-size:24px;padding:10px 22px;border:2px solid #3E7A55;border-radius:999px;color:#E3F1E6">FMCG</p>
+<p style="font-size:24px;padding:10px 22px;border:2px solid #3E7A55;border-radius:999px;color:#E3F1E6">Responsive web</p>
+<p style="font-size:24px;padding:10px 22px;border:2px solid #3E7A55;border-radius:999px;color:#E3F1E6">Live Dec 2025</p>
+</div>
+</div>
+<div style="display:flex;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#7FA88E"></div><p style="font-size:20px;color:#A9C9B3">Luxury e-commerce</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#7FA88E"></div><p style="font-size:20px;color:#A9C9B3">Sukoon</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#7FA88E"></div><p style="font-size:20px;color:#A9C9B3">Dar Al Arkan</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#FFB200"></div><p style="font-size:20px;color:#FFFFF7">Knorr US</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#1F5A36"></div><p style="font-size:20px;color:#7FA88E">Pickleball</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#1F5A36"></div><p style="font-size:20px;color:#7FA88E">Adventure</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#1F5A36"></div><p style="font-size:20px;color:#7FA88E">Camion</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#1F5A36"></div><p style="font-size:20px;color:#7FA88E">Empower</p></div>
+</div>
+<aside>Fourth case study: Knorr US for Unilever.</aside>
+</section>
+<section id="kn1" data-transition="fade" style="background:#01331A;color:#FFFFF7;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:72px">
+<div style="width:700px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#FFB200">Case study 04 · Unilever · Knorr US</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#FFFFF7">A 187-year-old brand, made for the feed</h2>
+<p style="font-size:30px;line-height:1.45;color:#CFE3D4">The brand got younger and bolder; the US website hadn't. Most visitors arrive from social, on a phone, straight onto one recipe.</p>
+<div style="display:flex;gap:20px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#0B4626;padding:28px;border-radius:16px">
+<p style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-2px;color:#FFB200">630+</p>
+<p style="font-size:24px;line-height:1.3;color:#CFE3D4">recipes made easier to find</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#0B4626;padding:28px;border-radius:16px">
+<p style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-2px;color:#FFB200">47</p>
+<p style="font-size:24px;line-height:1.3;color:#CFE3D4">components reskinned</p>
+</div>
+</div>
+<p style="font-size:24px;color:#CFE3D4"><b style="color:#FFFFF7">My role:</b> UX and UI design (hands-on) · Live December 2025</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<img src="img/514ea08762cddef2c64ab8a7dd9b8a62.webp" alt="New Knorr US homepage hero: Introducing new Knorr flavor bases" style="width:892px;height:471px;object-fit:cover;border-radius:20px">
+<p style="font-size:24px;color:#A9C9B3">The new homepage hero, built on the refreshed brand identity.</p>
+</div>
+<aside>The brief had three parts: reskin every component to the new identity, fully redesign the homepage and recipe page, and take a social-first approach. Analytics showed mostly new, mostly mobile visitors, many from social.</aside>
+</section>
+<section id="kn2" data-transition="fade" style="background:#F6F8EF;color:#14231A;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:64px">
+<div style="width:600px;display:flex;flex-direction:column;gap:36px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#00672A">Knorr US · Recipe page</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#14231A">The page that does most of the work</h2>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #D3DDC9;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#00672A">Designed where people land</h3>
+<p style="font-size:24px;line-height:1.45;color:#46524A">One recipe, from social, on a phone: so mobile came first.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #D3DDC9;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#00672A">The product is the hero</h3>
+<p style="font-size:24px;line-height:1.45;color:#46524A">"What you'll need" moves into the recipe, serving the purchase-intent KPI.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #D3DDC9;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#00672A">"Made this recipe?"</h3>
+<p style="font-size:24px;line-height:1.45;color:#46524A">Photos and reviews from real cooks close the loop with social.</p>
+</div>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:row;align-items:center;gap:40px">
+<div style="width:260px;height:560px;flex:none;border:10px solid #14231A;border-radius:44px;overflow:hidden;background:#14231A;box-shadow:0px 40px 60px -30px rgba(20,35,26,0.5)"><img src="img/53722f97452fc21333d7ccbcfc635367.webp" alt="New recipe page on mobile" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<img src="img/c90471fcc5ed35a3478741f64346ec9d.webp" alt="Before and after: product moved from the bottom of the recipe page into a hero block" style="width:700px;height:394px;object-fit:cover;border-radius:16px;border:2px solid #D3DDC9">
+<p style="font-size:24px;line-height:1.4;color:#46524A">Before: the product sat at the bottom. After: a hero block with rating and "Where to buy".</p>
+</div>
+</div>
+<aside>The recipe page gets the most traffic. It has to cook well, sell the product and give people a reason to stay, in that order: ingredients with retailer buttons, steps, the product block, community photos, related recipes, FAQs and reviews.</aside>
+</section>
+<section id="kn3" data-transition="fade" style="background:#007932;color:#FFFFF7;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between;gap:40px">
+<div style="display:flex;flex-direction:row;align-items:center;gap:64px">
+<div style="width:700px;display:flex;flex-direction:column;gap:28px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#FFFFF7">Knorr US · Social-first and toolkit</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#FFFFF7">Social by design, on a toolkit other markets reuse</h2>
+<p style="font-size:24px;line-height:1.5;color:#E3F1E6">Social built into the moments that matter: share a recipe, share your dish, cook with the community, and later, shop the feed. Underneath, 47 components and 11 templates audited, with a type scale and tokens shared across regions.</p>
+</div>
+<img src="img/c8c158f5f53e2b6592ef9170340d744e.webp" alt="Digital design system: type scale exploration and tokens" style="flex:1;width:900px;height:506px;object-fit:cover;border-radius:16px">
+</div>
+<img src="img/b541c772836c3a4c9cb08cd40f77f5b9.webp" alt="Social-first concepts: share recipes, share dish photo, community content, shop the feed" style="width:1664px;height:182px;object-fit:cover;border-radius:12px">
+<aside>The last slide of the case: social designed in where it helps rather than a feed in the footer, and a digital toolkit so the reskin stays consistent across Knorr markets. The site went live in December 2025.</aside>
+</section>
+<section id="div5" data-transition="push" style="background:linear-gradient(135deg, #22307A 0%, #181B4A 60%, #0F1130 100%);color:#F2F5FF;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<p style="font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#3ED07F">Case study 05 of 08</p>
+<div style="display:flex;flex-direction:column;gap:28px">
+<h1 style="font-family:'Poppins', Arial, sans-serif;font-size:120px;font-weight:800;line-height:1.05;letter-spacing:-4px;color:#F2F5FF">Pickleball tournament platform</h1>
+<p style="font-size:36px;line-height:1.4;color:#C9D2F0;width:1300px">A website, an admin console and a fan app for the fastest-growing sport, built on one source of truth.</p>
+<div style="display:flex;gap:12px">
+<p style="font-size:24px;padding:10px 22px;border:2px solid #3A4A9A;border-radius:999px;color:#E2E8FF">Sports tech</p>
+<p style="font-size:24px;padding:10px 22px;border:2px solid #3A4A9A;border-radius:999px;color:#E2E8FF">Web + admin + app</p>
+<p style="font-size:24px;padding:10px 22px;border:2px solid #3A4A9A;border-radius:999px;color:#E2E8FF">Design manager</p>
+</div>
+</div>
+<div style="display:flex;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#7C88C4"></div><p style="font-size:20px;color:#A9B3DE">Luxury e-commerce</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#7C88C4"></div><p style="font-size:20px;color:#A9B3DE">Sukoon</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#7C88C4"></div><p style="font-size:20px;color:#A9B3DE">Dar Al Arkan</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#7C88C4"></div><p style="font-size:20px;color:#A9B3DE">Knorr US</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#3ED07F"></div><p style="font-size:20px;color:#F2F5FF">Pickleball</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#7C88C4;opacity:.35"></div><p style="font-size:20px;color:#A9B3DE">Adventure</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#7C88C4;opacity:.35"></div><p style="font-size:20px;color:#A9B3DE">Camion</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#7C88C4;opacity:.35"></div><p style="font-size:20px;color:#A9B3DE">Empower</p></div>
+</div>
+<aside>Fifth case study: a pickleball tournament platform in the US, client name withheld. I was the design manager on this one.</aside>
+</section>
+<section id="pb1" data-transition="fade" style="background:radial-gradient(ellipse at 85% 15%, #22307A 0%, #181B4A 45%, #0F1130 100%);color:#F2F5FF;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:72px">
+<div style="width:760px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#3ED07F">Case study 05 · Sports tech · USA</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#F2F5FF">The fastest-growing sport, run on spreadsheets</h2>
+<p style="font-size:30px;line-height:1.45;color:#C9D2F0">Players hunted for events, organisers built draws by hand, and fans had nothing to do between matches. One tournament, four very different users.</p>
+<div style="display:flex;gap:20px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#1F2560;padding:28px;border-radius:16px">
+<p style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-2px;color:#3ED07F">3</p>
+<p style="font-size:24px;line-height:1.3;color:#C9D2F0">connected products</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#1F2560;padding:28px;border-radius:16px">
+<p style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-2px;color:#3ED07F">4</p>
+<p style="font-size:24px;line-height:1.3;color:#C9D2F0">user roles, one source of truth</p>
+</div>
+</div>
+<p style="font-size:24px;color:#C9D2F0"><b style="color:#F2F5FF">My role:</b> Design manager: direction, reviews and delivery · Launched</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:24px">
+<div style="width:260px;height:560px;border:10px solid #0A0B1E;border-radius:44px;overflow:hidden;background:#0A0B1E;transform:translateY(40px)"><img src="img/b2230b1a4177f25a86102ea04e3922f9.webp" alt="Fan app home with nearby events" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+<div style="width:260px;height:560px;border:10px solid #0A0B1E;border-radius:44px;overflow:hidden;background:#0A0B1E;transform:translateY(-40px)"><img src="img/c606728ea3d1f5c5cc0ef9e7e0425786.webp" alt="Live match score" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+<div style="width:260px;height:560px;border:10px solid #0A0B1E;border-radius:44px;overflow:hidden;background:#0A0B1E;transform:translateY(60px)"><img src="img/736f00c1e4d6fb59461da51670cd4296.webp" alt="League leaderboard and podium" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+</div>
+<aside>Players, organisers, referees and fans each see the same match differently. I led the design team: set the direction, ran reviews, and kept web, admin and mobile consistent as each shipped.</aside>
+</section>
+<section id="pb2" data-transition="fade" style="background:#F3F5FB;color:#14163A;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:64px">
+<div style="width:600px;display:flex;flex-direction:column;gap:36px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#1F6FE5">Pickleball · Decisions</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#14163A">One score, every screen</h2>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #D6DBEC;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#1F6FE5">Design the data first</h3>
+<p style="font-size:24px;line-height:1.45;color:#4A5070">A referee's score updates the website and the app at the same moment.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #D6DBEC;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#1F6FE5">Same bracket, two contexts</h3>
+<p style="font-size:24px;line-height:1.45;color:#4A5070">Admins edit the exact component players see, in a light theme built for work.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #D6DBEC;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#1F6FE5">Give fans a role</h3>
+<p style="font-size:24px;line-height:1.45;color:#4A5070">Picks, points and leaderboards turn watching into playing along.</p>
+</div>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:row;align-items:center;gap:28px">
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<img src="img/34cbb6a1333d998dc6a950df9741fc8f.webp" alt="Player website knockout bracket, dark theme" style="width:470px;height:560px;object-fit:cover;border-radius:14px">
+<p style="font-size:24px;color:#4A5070">Player website</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<img src="img/65c4d899fcb17833f31f4f9e9db56540.webp" alt="Admin console knockout bracket, light theme" style="width:470px;height:560px;object-fit:cover;border-radius:14px;border:2px solid #D6DBEC">
+<p style="font-size:24px;color:#4A5070">Admin console</p>
+</div>
+</div>
+<aside>The same knockout bracket on the player website (dark, broadcast style) and in the admin console (light, built for long sessions). Every match state, guest or signed in, not started or completed, was mapped up front.</aside>
+</section>
+<section id="div6" data-transition="push" style="background:linear-gradient(135deg, #1F5BC8 0%, #133A7E 60%, #0B1E44 100%);color:#F2F6FF;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<p style="font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#4FD27A">Case study 06 of 08</p>
+<div style="display:flex;flex-direction:column;gap:28px">
+<h1 style="font-family:'Poppins', Arial, sans-serif;font-size:120px;font-weight:800;line-height:1.05;letter-spacing:-4px;color:#F2F6FF">Adventure travel booking</h1>
+<p style="font-size:36px;line-height:1.4;color:#C6D4F2;width:1300px">Hotel and vacation-rental booking from search to checkout, on web and mobile, built by a team of three designers I led.</p>
+<div style="display:flex;gap:12px">
+<p style="font-size:24px;padding:10px 22px;border:2px solid #3E62A8;border-radius:999px;color:#E4ECFF">Travel</p>
+<p style="font-size:24px;padding:10px 22px;border:2px solid #3E62A8;border-radius:999px;color:#E4ECFF">Web + mobile</p>
+<p style="font-size:24px;padding:10px 22px;border:2px solid #3E62A8;border-radius:999px;color:#E4ECFF">Design manager</p>
+</div>
+</div>
+<div style="display:flex;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#7F98CC"></div><p style="font-size:20px;color:#C6D4F2">Luxury e-commerce</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#7F98CC"></div><p style="font-size:20px;color:#C6D4F2">Sukoon</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#7F98CC"></div><p style="font-size:20px;color:#C6D4F2">Dar Al Arkan</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#7F98CC"></div><p style="font-size:20px;color:#C6D4F2">Knorr US</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#7F98CC"></div><p style="font-size:20px;color:#C6D4F2">Pickleball</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#4FD27A"></div><p style="font-size:20px;color:#F2F6FF">Adventure</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#25467F"></div><p style="font-size:20px;color:#C6D4F2">Camion</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#25467F"></div><p style="font-size:20px;color:#C6D4F2">Empower</p></div>
+</div>
+<aside>Sixth case study: Adventure (adventure.inc), India. I was the design manager, leading two other designers.</aside>
+</section>
+<section id="adv1" data-transition="fade" style="background:radial-gradient(ellipse at 85% 15%, #1F5BC8 0%, #133A7E 45%, #0B1E44 100%);color:#F2F6FF;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:72px">
+<div style="width:760px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4FD27A">Case study 06 · Travel · India</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#F2F6FF">Booking travel is full of small doubts</h2>
+<p style="font-size:30px;line-height:1.45;color:#C6D4F2">Dates, rooms, guests, price, payment: every step is a chance to drop off. We designed one journey that answers each doubt at the moment it appears.</p>
+<div style="display:flex;gap:20px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#173F86;padding:28px;border-radius:16px">
+<p style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-2px;color:#4FD27A">3</p>
+<p style="font-size:24px;line-height:1.3;color:#C6D4F2">designers led across web and mobile</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#173F86;padding:28px;border-radius:16px">
+<p style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-2px;color:#4FD27A">+18%</p>
+<p style="font-size:24px;line-height:1.3;color:#C6D4F2">search-to-booking conversion</p>
+</div>
+</div>
+<p style="font-size:24px;color:#C6D4F2"><b style="color:#F2F6FF">My role:</b> Design manager, leading two designers · Launched</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:24px">
+<div style="width:260px;height:560px;border:10px solid #081430;border-radius:44px;overflow:hidden;background:#081430;transform:translateY(40px)"><img src="img/9b3daef1ceb2726324aaeeab514b94a3.webp" alt="Mobile home with recent searches" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+<div style="width:260px;height:560px;border:10px solid #081430;border-radius:44px;overflow:hidden;background:#081430;transform:translateY(-40px)"><img src="img/e4f5e236e2e1d3fcf6525d8327c8051e.webp" alt="Hotel results list" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+<div style="width:260px;height:560px;border:10px solid #081430;border-radius:44px;overflow:hidden;background:#081430;transform:translateY(60px)"><img src="img/4952b70e4d9e4536aaa266de66bcb3d7.webp" alt="Payment with coupons and points" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+</div>
+<aside>I set the direction and split the product by journey stage across a team of three designers. The +18% conversion figure is illustrative.</aside>
+</section>
+<section id="adv2" data-transition="fade" style="background:#F3F6FC;color:#0B1E44;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:64px">
+<div style="width:600px;display:flex;flex-direction:column;gap:36px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#1B5BD8">Adventure · Decisions</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#0B1E44">Answer each doubt where it appears</h2>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #D3DCEE;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#1B5BD8">Search in steps</h3>
+<p style="font-size:24px;line-height:1.45;color:#4A5878">Destination, then dates, then guests: one focused decision per screen.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #D3DCEE;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#1B5BD8">Price on the calendar</h3>
+<p style="font-size:24px;line-height:1.45;color:#4A5878">High, low and weekend prices shown while picking dates.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #D3DCEE;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#1B5BD8">Guests are welcome</h3>
+<p style="font-size:24px;line-height:1.45;color:#4A5878">Guest and member checkout designed side by side, no sign-up wall.</p>
+</div>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:row;align-items:center;gap:28px">
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<img src="img/8cc81a4fd497b22d012f420b59a74c04.webp" alt="Web results with filters" style="width:470px;height:560px;object-fit:cover;object-position:top;border-radius:14px;border:2px solid #D3DCEE">
+<p style="font-size:24px;color:#4A5878">Web results</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<img src="img/4952b70e4d9e4536aaa266de66bcb3d7.webp" alt="Mobile payment" style="width:470px;height:560px;object-fit:cover;object-position:top;border-radius:14px;border:2px solid #D3DCEE">
+<p style="font-size:24px;color:#4A5878">Mobile checkout</p>
+</div>
+</div>
+<aside>Results can be browsed as a list, grid or map, with price, rating and cancellation on every card. Checkout applies coupons and rewards points in place.</aside>
+</section>
+<section id="div7" data-transition="push" style="background:linear-gradient(135deg, #2E7A3A 0%, #1A4D25 60%, #0D2613 100%);color:#F1F8EE;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<p style="font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#F5A443">Case study 07 of 08</p>
+<div style="display:flex;flex-direction:column;gap:28px">
+<h1 style="font-family:'Poppins', Arial, sans-serif;font-size:120px;font-weight:800;line-height:1.05;letter-spacing:-4px;color:#F1F8EE">Camion trucking marketplace</h1>
+<p style="font-size:36px;line-height:1.4;color:#CFE2CC;width:1300px">One marketplace for the three people behind every shipment: the shipper, the transporter and the driver.</p>
+<div style="display:flex;gap:12px">
+<p style="font-size:24px;padding:10px 22px;border:2px solid #4C7A55;border-radius:999px;color:#E6F2E3">Logistics</p>
+<p style="font-size:24px;padding:10px 22px;border:2px solid #4C7A55;border-radius:999px;color:#E6F2E3">Web + mobile</p>
+<p style="font-size:24px;padding:10px 22px;border:2px solid #4C7A55;border-radius:999px;color:#E6F2E3">Design lead</p>
+</div>
+</div>
+<div style="display:flex;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#86A88C"></div><p style="font-size:20px;color:#CFE2CC">Luxury e-commerce</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#86A88C"></div><p style="font-size:20px;color:#CFE2CC">Sukoon</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#86A88C"></div><p style="font-size:20px;color:#CFE2CC">Dar Al Arkan</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#86A88C"></div><p style="font-size:20px;color:#CFE2CC">Knorr US</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#86A88C"></div><p style="font-size:20px;color:#CFE2CC">Pickleball</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#86A88C"></div><p style="font-size:20px;color:#CFE2CC">Adventure</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#F5A443"></div><p style="font-size:20px;color:#F1F8EE">Camion</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#2C5233"></div><p style="font-size:20px;color:#CFE2CC">Empower</p></div>
+</div>
+<aside>Seventh case study: Camion, Dubai. I led the entire design initiative.</aside>
+</section>
+<section id="cam1" data-transition="fade" style="background:radial-gradient(ellipse at 85% 15%, #2E7A3A 0%, #1A4D25 45%, #0D2613 100%);color:#F1F8EE;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:72px">
+<div style="width:760px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#F5A443">Case study 07 · Logistics · Dubai, UAE</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#F1F8EE">Trucking in the UAE ran on phone calls</h2>
+<p style="font-size:30px;line-height:1.45;color:#CFE2CC">Shippers called around for quotes, nobody knew where the truck was, and proof of delivery was a WhatsApp photo. Camion turned it into a marketplace.</p>
+<div style="display:flex;gap:20px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#215A2C;padding:28px;border-radius:16px">
+<p style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-2px;color:#F5A443">3</p>
+<p style="font-size:24px;line-height:1.3;color:#CFE2CC">connected apps: shipper, transporter, driver</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#215A2C;padding:28px;border-radius:16px">
+<p style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-2px;color:#F5A443">−40%</p>
+<p style="font-size:24px;line-height:1.3;color:#CFE2CC">time to book a truck</p>
+</div>
+</div>
+<p style="font-size:24px;color:#CFE2CC"><b style="color:#F1F8EE">My role:</b> Led the entire design initiative · Launched</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:24px">
+<div style="width:260px;height:560px;border:10px solid #08180C;border-radius:44px;overflow:hidden;background:#08180C;transform:translateY(40px)"><img src="img/64cf58de546c77e1b7591accab1ba87f.webp" alt="Shipper home" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+<div style="width:260px;height:560px;border:10px solid #08180C;border-radius:44px;overflow:hidden;background:#08180C;transform:translateY(-40px)"><img src="img/7e5ba246455b35e9aa4e70bf09e010ef.webp" alt="Transporter active trip timeline" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+<div style="width:260px;height:560px;border:10px solid #08180C;border-radius:44px;overflow:hidden;background:#08180C;transform:translateY(60px)"><img src="img/afc2ca90eab710fb8ee9a2fafa6da30c.webp" alt="Driver starts trip with OTP" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+</div>
+<aside>I mapped the shipper and transporter workflows step by step before designing the web portal and three apps. The −40% figure is illustrative.</aside>
+</section>
+<section id="cam2" data-transition="fade" style="background:#F3F7F1;color:#0D2613;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:64px">
+<div style="width:600px;display:flex;flex-direction:column;gap:36px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#2E9B3E">Camion · Decisions</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#0D2613">One trip, one status, three apps</h2>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #D3E2D1;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#2E9B3E">Bids, not phone calls</h3>
+<p style="font-size:24px;line-height:1.45;color:#4A5E4E">Shippers post once and compare offers side by side.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #D3E2D1;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#2E9B3E">Utilisation first</h3>
+<p style="font-size:24px;line-height:1.45;color:#4A5E4E">Idle trucks cost money, so fleet utilisation leads the transporter dashboard.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #D3E2D1;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#2E9B3E">Built for the cab</h3>
+<p style="font-size:24px;line-height:1.45;color:#4A5E4E">Driver screens use big targets and an OTP to start each trip.</p>
+</div>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:row;align-items:center;gap:28px">
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<img src="img/a239a8c76b55bf6b371ca5bddab539c6.webp" alt="Transporter web dashboard" style="width:470px;height:560px;object-fit:cover;object-position:top;border-radius:14px;border:2px solid #D3E2D1">
+<p style="font-size:24px;color:#4A5E4E">Transporter dashboard</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<img src="img/7e5ba246455b35e9aa4e70bf09e010ef.webp" alt="Active trip timeline" style="width:470px;height:560px;object-fit:cover;object-position:top;border-radius:14px;border:2px solid #D3E2D1">
+<p style="font-size:24px;color:#4A5E4E">Live trip timeline</p>
+</div>
+</div>
+<aside>Every app shows the same trip states, from bid to delivered, which removed most support questions.</aside>
+</section>
+<section id="div8" data-transition="push" style="background:linear-gradient(135deg, #3A33A0 0%, #26206B 60%, #141039 100%);color:#F4F2FF;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<p style="font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#F5C518">Case study 08 of 08</p>
+<div style="display:flex;flex-direction:column;gap:28px">
+<h1 style="font-family:'Poppins', Arial, sans-serif;font-size:120px;font-weight:800;line-height:1.05;letter-spacing:-4px;color:#F4F2FF">Empower engagement platform</h1>
+<p style="font-size:36px;line-height:1.4;color:#D3CFF0;width:1300px">A race-themed engagement platform for HERE Technologies employees: take part, earn laps and points, redeem rewards.</p>
+<div style="display:flex;gap:12px">
+<p style="font-size:24px;padding:10px 22px;border:2px solid #5A54A8;border-radius:999px;color:#ECEAFF">Enterprise</p>
+<p style="font-size:24px;padding:10px 22px;border:2px solid #5A54A8;border-radius:999px;color:#ECEAFF">Gamification</p>
+<p style="font-size:24px;padding:10px 22px;border:2px solid #5A54A8;border-radius:999px;color:#ECEAFF">Design lead</p>
+</div>
+</div>
+<div style="display:flex;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#8C86C8"></div><p style="font-size:20px;color:#D3CFF0">Luxury e-commerce</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#8C86C8"></div><p style="font-size:20px;color:#D3CFF0">Sukoon</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#8C86C8"></div><p style="font-size:20px;color:#D3CFF0">Dar Al Arkan</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#8C86C8"></div><p style="font-size:20px;color:#D3CFF0">Knorr US</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#8C86C8"></div><p style="font-size:20px;color:#D3CFF0">Pickleball</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#8C86C8"></div><p style="font-size:20px;color:#D3CFF0">Adventure</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#8C86C8"></div><p style="font-size:20px;color:#D3CFF0">Camion</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px"><div style="height:6px;border-radius:3px;background:#F5C518"></div><p style="font-size:20px;color:#F4F2FF">Empower</p></div>
+</div>
+<aside>Eighth and final case study: Empower, built for HERE Technologies as an internal employee engagement platform.</aside>
+</section>
+<section id="emp1" data-transition="fade" style="background:radial-gradient(ellipse at 85% 15%, #3A33A0 0%, #26206B 45%, #141039 100%);color:#F4F2FF;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:72px">
+<div style="width:760px;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#F5C518">Case study 08 · Enterprise · HERE Technologies</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#F4F2FF">Engagement tools nobody opened</h2>
+<p style="font-size:30px;line-height:1.45;color:#D3CFF0">Quizzes, surveys, events and recognition lived in separate tools that felt like chores. Empower turns taking part into a race with a finish line.</p>
+<div style="display:flex;gap:20px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#2E2880;padding:28px;border-radius:16px">
+<p style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-2px;color:#F5C518">5</p>
+<p style="font-size:24px;line-height:1.3;color:#D3CFF0">activity types in one race</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#2E2880;padding:28px;border-radius:16px">
+<p style="font-size:72px;font-weight:800;line-height:1;letter-spacing:-2px;color:#F5C518">87%</p>
+<p style="font-size:24px;line-height:1.3;color:#D3CFF0">employee satisfaction after launch</p>
+</div>
+</div>
+<p style="font-size:24px;color:#D3CFF0"><b style="color:#F4F2FF">My role:</b> Design lead, from research to visual design · Launched</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:24px">
+<div style="width:260px;height:560px;border:10px solid #0C0A26;border-radius:44px;overflow:hidden;background:#0C0A26;transform:translateY(40px)"><img src="img/af52fb741874b2b79ec6b42b2687b4b2.webp" alt="Leaderboard" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+<div style="width:260px;height:560px;border:10px solid #0C0A26;border-radius:44px;overflow:hidden;background:#0C0A26;transform:translateY(-40px)"><img src="img/bd2394a68249a63750725047e94a46e4.webp" alt="My journey with car and KPIs" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+<div style="width:260px;height:560px;border:10px solid #0C0A26;border-radius:44px;overflow:hidden;background:#0C0A26;transform:translateY(60px)"><img src="img/747cd01875fe73d97b3e24f507778d1c.webp" alt="Rewards store" data-crop="1 50% 0%" style="width:240px;height:540px;object-fit:cover"></div>
+</div>
+<aside>87% of employees surveyed after launch rated Empower satisfying or very satisfying.</aside>
+</section>
+<section id="emp2" data-transition="fade" style="background:#F5F4FB;color:#141039;font-family:'Poppins', Arial, sans-serif;padding:128px;display:flex;flex-direction:row;align-items:center;gap:64px">
+<div style="width:600px;display:flex;flex-direction:column;gap:36px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#3A33A0">Empower · Decisions</p>
+<h2 style="font-family:'Poppins', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;letter-spacing:-2px;color:#141039">A strong metaphor does half the work</h2>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #DCD9EE;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#3A33A0">Laps, not levels</h3>
+<p style="font-size:24px;line-height:1.45;color:#55527A">Progress shown as laps and points around a circuit everyone understands.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #DCD9EE;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#3A33A0">Celebrate in public</h3>
+<p style="font-size:24px;line-height:1.45;color:#55527A">Wins and appreciation in the feed; leaderboards by team, not just people.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:2px solid #DCD9EE;padding:20px 0px 0px 0px">
+<h3 style="font-size:32px;font-weight:600;color:#3A33A0">Coins with a purpose</h3>
+<p style="font-size:24px;line-height:1.45;color:#55527A">A rewards store and a manager dashboard give points meaning.</p>
+</div>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:row;align-items:center;gap:28px">
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<img src="img/2c159377bf98d4847fb4b8aeff81b028.webp" alt="Empower home feed" style="width:470px;height:560px;object-fit:cover;object-position:top;border-radius:14px;border:2px solid #DCD9EE">
+<p style="font-size:24px;color:#55527A">Race home</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:14px">
+<img src="img/af52fb741874b2b79ec6b42b2687b4b2.webp" alt="Leaderboard" style="width:470px;height:560px;object-fit:cover;object-position:top;border-radius:14px;border:2px solid #DCD9EE">
+<p style="font-size:24px;color:#55527A">Leaderboard</p>
+</div>
+</div>
+<aside>The home page is animated in the live product; a screen recording will replace this still.</aside>
+</section>
+</main></div>
+<div id="bar"></div>
+<div id="notes" role="note"></div>
+<div id="help"><kbd>←</kbd> <kbd>→</kbd> navigate · <kbd>F</kbd> full screen · <kbd>N</kbd> notes</div>
+<nav id="hud" aria-label="Slide controls">
+<button id="prev" type="button" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+<span id="count">1 / 1</span>
+<button id="next" type="button" aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+<button id="notesBtn" type="button" aria-label="Show speaker notes" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 10h16M4 15h10"/></svg></button>
+<button id="fs" type="button" aria-label="Full screen"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+</nav>
+<script>
+(function(){
+  var stage=document.getElementById('stage'),slides=[].slice.call(stage.children),n=slides.length,i=0;
+  var bar=document.getElementById('bar'),count=document.getElementById('count'),notes=document.getElementById('notes'),hud=document.getElementById('hud'),help=document.getElementById('help');
+  function fit(){var s=Math.min(innerWidth/1920,innerHeight/1080);stage.style.transform='scale('+s+')';}
+  function go(k){
+    k=Math.max(0,Math.min(n-1,k));
+    slides[i].classList.remove('on');slides[i].setAttribute('aria-hidden','true');
+    i=k;slides[i].classList.add('on');slides[i].removeAttribute('aria-hidden');
+    count.textContent=(i+1)+' / '+n;bar.style.width=((i+1)/n*100)+'%';
+    var a=slides[i].querySelector('aside');notes.textContent=a?a.textContent:'';
+    if(location.hash!=='#'+(i+1))history.replaceState(null,'','#'+(i+1));
+  }
+  slides.forEach(function(s){s.setAttribute('aria-hidden','true');});
+  function toggleNotes(){var on=notes.classList.toggle('show');document.getElementById('notesBtn').setAttribute('aria-pressed',on);}
+  function fullscreen(){if(!document.fullscreenElement){(document.documentElement.requestFullscreen||function(){}).call(document.documentElement);}else{document.exitFullscreen();}}
+  document.getElementById('prev').onclick=function(){go(i-1);};
+  document.getElementById('next').onclick=function(){go(i+1);};
+  document.getElementById('notesBtn').onclick=toggleNotes;
+  document.getElementById('fs').onclick=fullscreen;
+  addEventListener('keydown',function(e){
+    if(e.metaKey||e.ctrlKey||e.altKey)return;
+    var k=e.key;
+    if(k==='ArrowRight'||k==='PageDown'||k===' '||k==='ArrowDown'){e.preventDefault();go(i+1);}
+    else if(k==='ArrowLeft'||k==='PageUp'||k==='ArrowUp'){e.preventDefault();go(i-1);}
+    else if(k==='Home'){go(0);}else if(k==='End'){go(n-1);}
+    else if(k==='f'||k==='F'){fullscreen();}
+    else if(k==='n'||k==='N'){toggleNotes();}
+    wake();
+  });
+  stage.addEventListener('click',function(e){if(e.target.closest('a'))return;var r=stage.getBoundingClientRect();go(e.clientX<r.left+r.width*0.3?i-1:i+1);});
+  var tx=null;addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});
+  addEventListener('touchend',function(e){if(tx===null)return;var dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>40)go(dx<0?i+1:i-1);tx=null;});
+  var t;function wake(){hud.classList.remove('hide');clearTimeout(t);t=setTimeout(function(){if(!hud.matches(':hover'))hud.classList.add('hide');},2500);}
+  addEventListener('mousemove',wake);
+  setTimeout(function(){help.classList.add('hide');},5000);
+  addEventListener('resize',fit);addEventListener('hashchange',function(){var h=parseInt(location.hash.slice(1),10);if(h)go(h-1);});
+  fit();var h=parseInt(location.hash.slice(1),10);go(h?h-1:0);wake();
+})();
+</script>
+</body>
+</html>
