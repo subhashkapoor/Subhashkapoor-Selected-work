@@ -17,12 +17,12 @@ body{font-family:'Poppins',Arial,sans-serif;-webkit-font-smoothing:antialiased}
 #stage>section{position:absolute;inset:0;width:1920px;height:1080px;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s}
 #stage>section.on{opacity:1;visibility:visible;transition:opacity .45s ease,visibility 0s}
 #stage>section aside{display:none}
-#bar{position:fixed;left:0;bottom:0;height:3px;background:#D9A06B;transition:width .3s ease;z-index:5}
+#bar{position:fixed;left:0;bottom:0;height:3px;background:#2563EB;transition:width .3s ease;z-index:5}
 #hud{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);display:flex;align-items:center;gap:6px;padding:6px 8px;background:rgba(20,20,24,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#EDEBE6;font-size:14px;z-index:6;transition:opacity .3s ease}
 #hud.hide{opacity:0;pointer-events:none}
 #hud button{all:unset;cursor:pointer;width:36px;height:36px;border-radius:50%;display:grid;place-items:center}
 #hud button:hover,#hud button:focus-visible{background:rgba(255,255,255,.12)}
-#hud button:focus-visible{outline:2px solid #D9A06B}
+#hud button:focus-visible{outline:2px solid #2563EB}
 #hud svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 #count{min-width:64px;text-align:center;font-variant-numeric:tabular-nums}
 #notes{position:fixed;left:50%;bottom:72px;transform:translateX(-50%);width:min(860px,calc(100% - 32px));padding:18px 22px;background:rgba(20,20,24,.92);border:1px solid rgba(255,255,255,.12);border-radius:16px;color:#EDEBE6;font-size:16px;line-height:1.55;z-index:6;display:none}
